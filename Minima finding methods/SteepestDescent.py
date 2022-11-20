@@ -1,7 +1,8 @@
-#Minima finding by golden section method
+#Minima finding by steepest descent
 while True:
     try:
         x1 = float(input("Enter the possible value of x: "))
+        step = float(input("Enter the step size: "))
         break
     except ValueError:
         print ("Invalid type of input")
@@ -11,8 +12,8 @@ while True:
     print ("Iteration:",count)
     S_x1 = 4 - (2*x1)
     if round(S_x1,5) != 0:
-        x2 = x1 + (0.1*S_x1)
-        print (f"x1 = {x1}\tstep = 0.1\tNegative derivative = {S_x1}\tx2 = {x2}")
+        x2 = x1 + (step*S_x1)
+        print (f"x1 = {x1}\tstep = {step}\tNegative derivative = {S_x1}\tx2 = {x2}")
         x1 = x2
     else:
         print (f"{'-'*50}")
